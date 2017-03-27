@@ -5,7 +5,7 @@ class App extends Component {
   render() {
      
     return (   
-        <Home name="CMU"/>
+        <Home name="CMU DormHor5 Chicken Rice"/>
     );
   }
 }
