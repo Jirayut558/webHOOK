@@ -26,7 +26,7 @@ class TestComponent extends React.Component{
     return (
    
     <div>
-      <h4><small>Gai Lowvapong   Sep 28, 2017, 11:00 AM</small></h4>
+      <h4><small>CMU Dorm5 Chicken Rice  Sep 28, 2017, 11:00 AM</small></h4>
      {this.state.order.map((order,index) => (
           <div>           
             <h4 key={index}>{order.id} : {order.menu}</h4>
