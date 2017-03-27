@@ -1,0 +1,46 @@
+.navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+	
+	h3 {
+    color: white;
+	}
+	
+	hr {
+		border-width: 1px  ;       
+           border-color: #636450; 
+           width: 100%;
+           margin-left: auto;
+           margin-right: auto;
+	}
+	
+	.row.content {height: 1500px}
+    
+    
+    .sidenav {
+      background-color: #FBFD87;
+      height: 100%;
+    }
+    
+    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+	
+	footer {
+      background-color: #4E4E43;
+      color: white;
+      padding: 10px;
+    }
