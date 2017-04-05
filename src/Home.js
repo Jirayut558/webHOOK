@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
 import Fetch from 'react-fetch';
-import Submit from './Submit';
-import './Order.css'
+import './css/Order.css'
 class Home extends Component {
     render() {
-    
-      var url ="http://jqhook.azurewebsites.net/order/get/"+this.props.name; 
+      var url ="http://jqhook.azurewebsites.net/order/get/1"; 
       console.log(url);
      return (  
       <Fetch url={url}>        
-        <TestComponent/>
-        
+        <TestComponent/>     
       </Fetch>
     ); 
-  }   
-  
+  }     
 }
 class TestComponent extends React.Component{
-
   render(){   
     const json = this.props;
     console.log(json);
     this.print(json);
-
     return (
-   
     <div>
       <h4><small>CMU Dorm5 Chicken Rice  Sep 28, 2017, 11:00 AM</small></h4>
      {this.state.order.map((order,index) => (
@@ -44,9 +37,7 @@ class TestComponent extends React.Component{
         request.open('GET', 'http://jqhook.azurewebsites.net/order/'+order_id+'/done', true);
         request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         request.send();    
-        console.log("Done");
-    return(<Submit/>);
-    
+        console.log("Done");      
   }
   print(json){
     console.log(Object.keys(json).length);
@@ -70,6 +61,4 @@ class TestComponent extends React.Component{
     console.log(this.state.order); 
   }
 }
-
-
 export default Home;
