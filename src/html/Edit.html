@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #FBFD87">
+<!--------------------------------------nav---------------------------------------------------->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		  <a class="navbar-brand" href="#">HOOK</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li><a href="#">Queue Board</a></li>
+			<li><a href="#">History</a></li>
+			<li class="active"><a href="#">Edit</a></li>
+			<li><a href="#">Info</a></li>	
+			<li><a href="#">Summary</a></li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>      
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+	<!-------------------------------------------------- Modal ------------------------------------------------------------>
+	<div class="row">
+  <div class="col-md-6 ">
+  
+
+	<div class="container">
+	 <!-- Trigger the modal with a button -->
+		<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Add menu</button>
+
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		
+		
+		  <!-- Modal content-->
+		  <div class="modal-content">
+		  <div class="well">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h4 class="modal-title"><label>ADD MENU</label</h4>
+			</div>
+			<div class="modal-body" >   
+		<!--block-->
+		
+		<div class="form-group">
+		  <label for="Food name">Food name:</label>
+		  <input type="text" class="form-control" id="Food name">
+		</div>
+		<div class="form-group">
+			<label for="Price">Price (บาท):</label>
+			<input type="password" class="form-control" id="Price">
+		</div>
+		<div class="form-group">
+		  <label for="Food type">Food type (select one):</label>
+		  <select class="form-control" id="Food type">
+			
+			<option>อาหารจานเดียว</option>
+			<option>เกี๋ยวเตี๋ยว</option>
+			<option>ของหวาน</option>
+			
+		  </select>
+		</div>
+		
+		<div class="form-group">
+		<label for="Picture">Picture</label>
+		<input type="file" id="Picture">
+		<p class="help-block">ขนาดภาพไม่เกิน</p>
+		</div>
+	  
+		</div>
+		
+		<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Add</button>
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		
+		 </div>
+		</div>
+			</div>
+		</div>
+		</div>
+		</div>
+       </div>
+      
+	
+	<!------------table------------------>
+	<br><br><div class="table-responsive" >
+	 <table class="table table-hover">
+    <thead style="background-color:#B8AF50">
+      <tr>
+		<th>No.</th>
+        <th>Food name</th>
+        <th>Price (บาท)</th>
+        <th>Type of food</th>
+		<th>picture</th>
+		<th></th>
+		
+      </tr>
+    </thead>
+    <tbody style="background-color:#D7D179">
+      <tr>
+		<td>1</td>
+        <td>ข้าวมันไก่</td>
+        <td>25 </td>
+        <td>อาหารจานเดียว</td>
+		<td><img src="Hook.png" class="img-rounded" width="100" height="100"></td>
+		<td>
+		
+		<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<input type="image" src="btn_Setting.png" width="50" height="50">
+		<div class="form-group">
+		<label for="change picture">Change picture</label>
+		<input type="file" id="change picture">
+		
+		</td>
+		
+      </tr>
+      <tr>
+		<td>2</td>
+        <td>ก๋วยเตี๋ยวเป็ด</td>
+        <td>40</td>
+        <td>เกี๋ยวเตี๋ยว</td>
+		<td><img src="Hook.png" class="img-rounded" width="100" height="100"></td>
+		<td>
+		</div>
+		<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<input type="image" src="btn_Setting.png" width="50" height="50">
+		<div class="form-group">
+		<label for="change picture">Change picture</label>
+		<input type="file" id="change picture">
+		
+		</td>
+      </tr>
+      <tr>
+		<td>3</td>
+        <td>บัวลอยไข่หวาน</td>
+        <td>20 </td>
+        <td>ของหวาน</td>
+		<td><img src="Hook.png" class="img-rounded" width="100" height="100"></td>
+		<td>
+		</div>
+		<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<input type="image" src="btn_Setting.png" width="50" height="50">
+		<div class="form-group">
+		<label for="change picture">Change picture</label>
+		<input type="file" id="change picture">
+		
+		</td>
+      </tr>
+	  
+    </tbody>
+  </table>
+	</div>
+	</div>
+	
+  <!---------------------------------- button -------------------------------->
+	<br><br>
+	<center>
+	  <button type="button " class="btn btn-block btn-lg " style="background-color: #87885D"><p style="color:white">Confirm</p></button>	
+	</center>
+	
+	
+	 
+
+</body>
+</html>

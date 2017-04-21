@@ -14,7 +14,7 @@ class Home extends Component {
 }
 class TestComponent extends React.Component{
   render(){   
-    const json = this.prop.url;
+    const json = "";
     const x = JSON.parse(JSON.stringify(json[0]||{}));  
     const y = JSON.stringify(json[0]||{});  
     console.log(json[0]);
