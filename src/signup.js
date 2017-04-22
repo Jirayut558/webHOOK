@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './css/se.css';
 class Signup extends Component{
     constructor(props) {
         super(props)
@@ -9,14 +9,14 @@ class Signup extends Component{
         
         return(
             <div>
-                <h>Signup</h>
-            <form className="signup-form" onSubmit={this.handleSubmit}>
+              <ul className="menu"><center><h>Sign up</h></center></ul>  
+            <form  onSubmit={this.handleSubmit}>
                 <input type='text' placeholder='firstname' required ref={(fname) => this.fname_input = fname}/>
                 <input type='text' placeholder='lastname' required ref={(lname) => this.lname_input = lname}/>               
                 <input type='text' placeholder='email' required ref={(email) => this.email_input = email}/>
                 <input type='password' placeholder='password' required ref={(pass) => this.pass_input = pass}/>
                 <input type='password' placeholder='confirm-password' required ref={(conpass) => this.conpass_input = conpass}/>
-                <input type='submit' value='Submit'/>
+                <center><button className="submit" type='submit'>Submit</button></center>
             </form>
             </div>
         );
@@ -30,7 +30,7 @@ handleSubmit(e) {
             Name: this.fname_input.value,
             Lastname: this.lname_input.value,          
             Email:this.email_input.value,
-            Type:1
+            Type:0
         }       
         var params = "Password="+data.Password+"&Name="+data.Name
                         +"&Lastname="+data.Lastname+"&Email="+data.Email+"&Type="+data.Type;
@@ -40,10 +40,15 @@ handleSubmit(e) {
         xmlRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xmlRequest.responseType = 'json'                     
                 if (tmp.confirmpassword == data.Password&&this.validation(data.Email)) {
-                    xmlRequest.send(params); 
-                    var user = xmlRequest.response
-                console.log(xmlRequest.response)
-                                 
+                    xmlRequest.send(params);
+                    console.log(xmlRequest.response)
+                     xmlRequest.addEventListener('load', () => {
+                         if (xmlRequest.status == 200){
+                            var user = xmlRequest.response;
+                            console.log(xmlRequest.response);
+                            window.location.href = window.location.origin;
+                     }
+                    });
                 }
                 else{                
                     if(tmp.confirmpassword != data.Password&&this.validation(data.Email)){

@@ -15,6 +15,7 @@
 
  import React, { Component } from 'react';
 import { Link } from 'react-router';
+import './css/se.css';
  class Management extends Component{
     constructor(props) {
         super(props)
@@ -24,7 +25,7 @@ import { Link } from 'react-router';
         
          return(
             <div>
-                <h>Signup</h>
+                 <ul className="menu"><center><h>Store Create</h></center></ul> 
 
 
             <form onSubmit={this.handleSubmit}>
@@ -42,14 +43,15 @@ import { Link } from 'react-router';
                 <input type='text' placeholder='Latitude' required ref={(lat) => this.lat_input = lat}/>
                 <input type='text' placeholder='Longitude' required ref={(long) => this.long_input = long}/><br/>
    
-                <input type='submit' value='Submit'/>
+                  <center><button className="submit" type='submit'>Submit</button></center>
             </form>
             </div>
         );
     }
+    
+
     handleSubmit(e){
         e.preventDefault()
-
         var data = {
             Name: this.name_input.value,
             Img: this.img_intput.value,
@@ -61,11 +63,11 @@ import { Link } from 'react-router';
             Tel:this.tel_input.value,
             Rate:0,
             Catagory: this.cat_input.value,
-            Location:{lat:this.lat_input.value,long:this.long_input.value}                      
+            Location:{Lat:parseFloat(this.lat_input.value),Long:parseFloat(this.long_input.value)}                      
         }
         
         var json = JSON.stringify(data);
-       
+       console.log(json);
 
         var xmlRequest = new XMLHttpRequest();
         xmlRequest.open('post','http://jqhook.azurewebsites.net/store/add');
@@ -76,6 +78,7 @@ import { Link } from 'react-router';
             if(xmlRequest.status==200)
             {
                 alert("Add Successed");
+                 window.location.href = window.location.origin + '/order';
             }else
             {
                 alert("Error : Cannot Submit");

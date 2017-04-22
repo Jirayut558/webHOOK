@@ -6,6 +6,7 @@ import Login from './Login';
 import Order from './Order';
 import Signup from './signup';
 import Management from './management';
+import Menu from './menu';
 class App extends Component{
     render(){
         return(
@@ -13,8 +14,9 @@ class App extends Component{
                 <Switch>
                     <Route exact = {true} path={"/"} component = {Login}/>
                     <Route path={'/order'} component={Order}/>
-                     <Route path={'/signup'} component={Signup}/>
-                    <Route path='/management' component={Management}/>>              
+                    <Route path={'/signup'} component={Signup}/>
+                    <Route path={'/management'} component={Management}/>
+                    <Route path={'/menu'} component={Menu}/>                
                 </Switch>    
             </Router>
 

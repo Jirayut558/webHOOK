@@ -17,7 +17,6 @@ class Login extends React.Component{
         return(
 
 <div >
-
         <div>
             <div className='form-page__form-wrapper'>
                 <div className='form-page__form-header'>
@@ -65,12 +64,15 @@ class Login extends React.Component{
                 if (user.Email != null) {                
                         if(count==5){
                             window.sessionStorage.setItem('userid',user.ID);
+                            window.sessionStorage.setItem('username',user.Name);
                             window.location.href = window.location.origin + '/management';
                             console.log(user.ID);                                                
                         }
                         else{
-                            console.log(user);  
-                          //  window.location.href = window.location.origin + '/order';                        
+                            console.log("Order");
+                            window.sessionStorage.setItem('storeid',user.Store.ID); 
+                            window.sessionStorage.setItem('username',user.Name);
+                            window.location.href = window.location.origin + '/order';                        
                         }                           
                 }
                 else {
