@@ -10,7 +10,7 @@ import Menu from './menu';
 class App extends Component{
     
     render(){
-        response.end("Hello Azure!");
+
         return(
             <Router>
                 <Switch>
