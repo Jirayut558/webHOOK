@@ -9,9 +9,8 @@ import Management from './management';
 import Menu from './menu';
 class App extends Component{
     
-    render(){/*
+    render(){
 var http = require('http');
-
 var server = http.createServer(function(request, response) {
 
     response.writeHead(200, {"Content-Type": "text/plain"});
@@ -22,7 +21,7 @@ var server = http.createServer(function(request, response) {
 var port = process.env.PORT || 3000;
 server.listen(port);
 
-console.log("Server running at http://localhost:%d", port);*/
+console.log("Server running at http://localhost:%d", port);
         return(
             <Router>
                 <Switch>
