@@ -1,7 +1,7 @@
 {
-  "name": "Hook",
+  "name": "hook",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "dateformat": "^2.0.0",
     "firebase": "^3.7.8",
