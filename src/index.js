@@ -8,7 +8,9 @@ import Signup from './signup';
 import Management from './management';
 import Menu from './menu';
 class App extends Component{
+    
     render(){
+        response.end("Hello Azure!");
         return(
             <Router>
                 <Switch>
