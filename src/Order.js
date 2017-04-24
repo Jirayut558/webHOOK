@@ -12,12 +12,11 @@ class Order extends React.Component{
     }
        
     componentWillMount() {   
-        this.intervalId = setInterval(this.timer.bind(this), 5000);
-        
-
+        this.intervalId = setInterval(this.timer.bind(this), 2000);
     }  
     timer(){
-        var url = 'http://jqhook.azurewebsites.net/order/get/'+window.sessionStorage.getItem('storeid');
+  //      var url = 'http://jqhook.azurewebsites.net/order/get/'+window.sessionStorage.getItem('storeid');
+          var url = 'http://jqhook.azurewebsites.net/order/get/5';
         fetch(url)
             .then( (response) => {
                 return response.json() })   
@@ -29,22 +28,23 @@ class Order extends React.Component{
     render(){   
         var j = this.state.data;             
         this.print(j);   
-        
+        if(window.sessionStorage.getItem('storeid')==null){
+            alert("Please Login");
+             window.location.href = window.location.origin; 
+        }
      return (
         
     <div>
-
     <ul>
-	    <li className="active" className="left"><a href="default.asp">Home</a></li>
+	    <li className="active" className="left"><a href="">Home</a></li>
 	    <li  className="left"><a onClick={this.linktoaddmenu}>Add menu</a></li>	 
-	    <li className="left"><a href="">Summary</a></li>
+	    <li className="left"><a onClick={this.summary}>Summary</a></li>
         <li className="right"><a onClick={this.logout}>Logout</a></li>
-        <li className="right"><b>{window.sessionStorage.getItem('username')}</b></li>  
-	</ul>
-	
-	
-	<h1>Order</h1>
-
+        <li className="right"><b>{window.sessionStorage.getItem('storename')}<i class="glyphicon glyphicon-user"></i></b></li>  
+	</ul>	
+    <div>
+	<h1>ORDER</h1><br/>
+</div>
                 <table>
                     <tr>
                         <th>Customer</th>
@@ -71,6 +71,9 @@ logout(){
 linktoaddmenu(){
     window.location.href = window.location.origin + '/menu';
 }
+summary(){
+    window.location.href = window.location.origin + '/summary';
+}
 handleSubmit(e) {
         e.preventDefault()
         console.log(e);
@@ -87,6 +90,7 @@ handleSubmit(e) {
                  var res = request.response;
                 console.log(res);
                // window.location.reload();
+               this.timer.bind(this);
         }    
          });
             
@@ -103,7 +107,7 @@ handleSubmit(e) {
         var count =0;
         if(tmp.Status==0){
         const listmenu = tmp.MenuList.map((menu) => 
-          <li key={count++}>{menu}</li>
+         <div><li key={count++}>{menu}</li><br/></div>
         )
         console.log("order");   
         order.push({         

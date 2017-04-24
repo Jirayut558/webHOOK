@@ -6,22 +6,11 @@ import Login from './Login';
 import Order from './Order';
 import Signup from './signup';
 import Management from './management';
+import Summary from './summary';
 import Menu from './menu';
 class App extends Component{
     
-    render(){/*
-var http = require('http');
-var server = http.createServer(function(request, response) {
-
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello Azure!");
-
-});
-
-var port = process.env.PORT || 3000;
-server.listen(port);
-
-console.log("Server running at http://localhost:%d", port);*/
+    render(){
         return(
             <Router>
                 <Switch>
@@ -29,7 +18,8 @@ console.log("Server running at http://localhost:%d", port);*/
                     <Route path={'/order'} component={Order}/>
                     <Route path={'/signup'} component={Signup}/>
                     <Route path={'/management'} component={Management}/>
-                    <Route path={'/menu'} component={Menu}/>                
+                    <Route path={'/menu'} component={Menu}/>  
+                    <Route path={'/summary'} component={Summary}/>                  
                 </Switch>    
             </Router>
 

@@ -22,7 +22,10 @@ import './css/se.css';
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     render(){
-        
+        //  if(window.sessionStorage.getItem('storeid')==null){
+        //     alert("Please Login");
+        //      window.location.href = window.location.origin; 
+        // }
          return(
             <div>
                  <ul className="menu"><center><h>Store Create</h></center></ul> 
@@ -30,15 +33,15 @@ import './css/se.css';
 
             <form onSubmit={this.handleSubmit}>
                 <input type='text' placeholder='Name' required ref={(name) => this.name_input = name}/> <br/>
-                 <input type='text' placeholder='Image url' required ref={(img) => this.img_intput = img}/><br/>               
+                <input type='text' placeholder='Image url' required ref={(img) => this.img_intput = img}/><br/>               
                 <input type='text' placeholder='Small image' required ref={(simg) => this.simg_input = simg}/>
                 <input type='text' placeholder='Open Time' required ref={(opentime) => this.open_input = opentime}/>
                 <input type='text' placeholder='Close Time' required ref={(closetime) => this.close_input = closetime}/>
                 <input type='text' placeholder='Address' required ref={(address) => this.addr_input = address}/>
                 <input type='text' placeholder='Telephone number' required ref={(tel) => this.tel_input = tel}/>
    
-                <input type='text' placeholder='Catagory' required ref={(Catagory) => this.cat_input = Catagory}/><br/>
-             
+                <input type='text' placeholder='Catagory' required ref={(Catagory) => this.cat_input = Catagory}/><br/>    
+        
                 <text>Location</text>
                 <input type='text' placeholder='Latitude' required ref={(lat) => this.lat_input = lat}/>
                 <input type='text' placeholder='Longitude' required ref={(long) => this.long_input = long}/><br/>

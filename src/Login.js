@@ -71,6 +71,7 @@ class Login extends React.Component{
                         else{
                             console.log("Order");
                             window.sessionStorage.setItem('storeid',user.Store.ID); 
+                            window.sessionStorage.setItem('storename',user.Store.Name); 
                             window.sessionStorage.setItem('username',user.Name);
                             window.location.href = window.location.origin + '/order';                        
                         }                           

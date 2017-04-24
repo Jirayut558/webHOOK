@@ -30,7 +30,7 @@ handleSubmit(e) {
             Name: this.fname_input.value,
             Lastname: this.lname_input.value,          
             Email:this.email_input.value,
-            Type:0
+            Type:1
         }       
         var params = "Password="+data.Password+"&Name="+data.Name
                         +"&Lastname="+data.Lastname+"&Email="+data.Email+"&Type="+data.Type;
@@ -45,8 +45,19 @@ handleSubmit(e) {
                      xmlRequest.addEventListener('load', () => {
                          if (xmlRequest.status == 200){
                             var user = xmlRequest.response;
-                            console.log(xmlRequest.response);
-                            window.location.href = window.location.origin;
+                            console.log(user.response);
+
+                            if(user.response=="success"){
+                                alert("Signup Success");
+                                window.location.href = window.location.origin;
+                            }
+                            else{
+                                 alert(user.response);
+                            }
+                            
+                     }
+                     else{
+                         alert("Error Signup");
                      }
                     });
                 }

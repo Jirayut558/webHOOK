@@ -38,6 +38,11 @@ render(){
             Tag:"",
             ID:-1                 
         }
+        if(window.sessionStorage.getItem('storeid')==null){
+            alert("Please Login");
+            window.location.href = window.location.origin;
+        }
+
         var json = JSON.stringify(data);      
         var xmlRequest = new XMLHttpRequest();
         xmlRequest.open('post', 'http://jqhook.azurewebsites.net/menu/addmenu');
